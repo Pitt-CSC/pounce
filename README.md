@@ -5,7 +5,7 @@ The `pounce` command-line tool encapsulates common development and maintenance t
 
 ## Installation
 
-From the shell of your choice:
+From your shell of choice:
 
 ```
 # Enter your home directory
