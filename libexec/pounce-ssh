@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+GATEWAY="gateway.do-nyc3.pittcsc.org"
+ssh -t "$@" -oproxycommand="ssh -q -W %h:%p $GATEWAY"
