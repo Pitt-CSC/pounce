@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# Usage: pounce ssh <host>
+# Summary: Open a secure shell on a Pitt CSC server
+# Help: Opens a secure shell on a Pitt CSC server.
+#
+#   pounce ssh ci-01
+#   pounce ssh ansible@config-01
 set -e
 
 GATEWAY="gateway.do-nyc3.pittcsc.org"
