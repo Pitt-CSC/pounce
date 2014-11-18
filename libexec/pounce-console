@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Usage: pounce console <app> [options]
+# Summary: Open a console for an app
+# Help: Opens a production console for the given app.
+#
+# Supports the following apps:
+#
+# * Handy
+set -e
+
+app=$1
+
+case "$app" in
+  handy|Handy)
+    exec pounce-rails console "$app"
+    ;;
+  *)
+    echo "Error: Invalid app \"$app\"" >&2
+    exit 1
+    ;;
+esac

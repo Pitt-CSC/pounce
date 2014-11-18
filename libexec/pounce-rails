@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Usage: pounce rails <command> <app> [options]
+# Summary: Run a `rails` command for an app
+# Help: Runs a `rails` command for the given app.
+#
+# Supports the following apps:
+#
+# * Handy
+#
+# Supports the following commands:
+#
+# * console (c)
+set -e
+
+command=$1
+app=$2
+shift 2
+
+case "$app" in
+  handy|Handy)
+    user="handy"
+    host="app-01"
+    app_path="/u/apps/handy/current"
+    ;;
+  *)
+    echo "Error: Invalid Rails app \"$app\"" >&2
+    exit 1
+esac
+
+case "$command" in
+  console|c) ;;
+  *)
+    exec pounce-help rails
+    ;;
+esac
+
+runner="cd $app_path && /bin/bash -lc 'bundle exec rails $command production $@'"
+
+exec pounce-ssh "$user@$host" "$runner"
