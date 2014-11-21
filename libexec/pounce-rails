@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Usage: pounce rails <command> <app> [options]
+# Usage: pounce rails <app> <command> [options]
 # Summary: Run a `rails` command for an app
 # Help: Runs a `rails` command for the given app.
 #
@@ -12,8 +12,8 @@
 # * console (c)
 set -e
 
-command=$1
-app=$2
+app=$1
+command=$2
 shift 2
 
 case "$app" in

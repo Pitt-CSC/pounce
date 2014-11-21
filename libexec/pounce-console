@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Usage: pounce console <app> [options]
+# Usage: pounce console <app>
 # Summary: Open a console for an app
 # Help: Opens a production console for the given app.
 #
@@ -12,7 +12,7 @@ app=$1
 
 case "$app" in
   handy|Handy)
-    exec pounce-rails console "$app"
+    exec pounce-rails "$app" console
     ;;
   *)
     echo "Error: Invalid app \"$app\"" >&2
