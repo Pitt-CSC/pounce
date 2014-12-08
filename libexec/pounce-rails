@@ -10,6 +10,7 @@
 # Supports the following commands:
 #
 # * console (c)
+# * dbconsole (db)
 set -e
 
 app=$1
