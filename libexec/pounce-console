@@ -15,7 +15,5 @@ case "$app" in
     exec pounce-rails "$app" console
     ;;
   *)
-    echo "Error: Invalid app \"$app\"" >&2
-    exit 1
-    ;;
+    exec pounce-error "invalid app"
 esac

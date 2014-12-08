@@ -23,15 +23,14 @@ case "$app" in
     app_path="/u/apps/handy/current"
     ;;
   *)
-    echo "Error: Invalid Rails app \"$app\"" >&2
-    exit 1
+    exec pounce-error "invalid Rails app"
 esac
 
 case "$command" in
   console|c) ;;
+  dbconsole|db) ;;
   *)
-    exec pounce-help rails
-    ;;
+    exec pounce-error "invalid Rails command"
 esac
 
 runner="cd $app_path && /bin/bash -lc 'bundle exec rails $command production $@'"

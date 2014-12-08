@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Usage: pounce dbconsole <app>
+# Summary: Open a database console for an app
+# Help: Opens a production DB console for the given app.
+#
+# Supports the following apps:
+#
+# * Handy
+set -e
+
+app=$1
+
+case "$app" in
+  handy|Handy)
+    exec pounce-rails "$app" dbconsole --include-password
+    ;;
+  *)
+    exec pounce-error "invalid app"
+esac
