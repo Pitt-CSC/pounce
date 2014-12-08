@@ -1,6 +1,6 @@
 # Pounce
 
-The `pounce` command-line tool encapsulates common development and maintenance tasks for the CSC's infrastructure.
+The `pounce` command-line tool encapsulates common development and maintenance tasks for the CSC's infrastructure. It's built on [Sub](https://github.com/basecamp/sub).
 
 
 ## Installation
