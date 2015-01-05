@@ -7,9 +7,10 @@
 #   pounce ssh handy@app-01
 set -e
 
-GATEWAY="gateway.do-nyc3.pittcsc.org"
+GATEWAY_HOST="gateway.do-nyc3.pittcsc.org"
+GATEWAY_PORT=56362
 
 host="$1"
 shift 1
 
-ssh "$host" -t -o "ProxyCommand ssh -q -W %h:%p $GATEWAY" "$@"
+ssh "$host" -t -o "ProxyCommand ssh -q -W %h:%p $GATEWAY_HOST -p $GATEWAY_PORT" "$@"
