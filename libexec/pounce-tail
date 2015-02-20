@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Usage: pounce tail <app>
+# Summary: Tail the production log for an app
+# Help: Tails the production log for the given app.
+#
+# Supports the following apps:
+#
+# * Handy
+set -e
+
+app=$1
+shift 1
+
+case "$app" in
+  handy|Handy)
+    user="handy"
+    host="app-01"
+    log_path="/u/apps/handy/shared/log/production.log"
+    ;;
+  *)
+    exec pounce-error "invalid app"
+esac
+
+runner="tail -f $log_path"
+
+exec pounce-ssh "$user@$host" "$runner"
