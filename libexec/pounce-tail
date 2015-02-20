@@ -9,7 +9,6 @@
 set -e
 
 app=$1
-shift 1
 
 case "$app" in
   handy|Handy)
