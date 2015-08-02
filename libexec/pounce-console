@@ -6,12 +6,13 @@
 # Supports the following apps:
 #
 # * Handy
+# * Heaven
 set -e
 
 app=$1
 
 case "$app" in
-  handy|Handy)
+  handy|Handy|heaven|Heaven)
     exec pounce-rails "$app" console
     ;;
   *)

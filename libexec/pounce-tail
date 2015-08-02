@@ -6,6 +6,7 @@
 # Supports the following apps:
 #
 # * Handy
+# * Heaven
 set -e
 
 app=$1
@@ -15,6 +16,11 @@ case "$app" in
     user="handy"
     host="app-01"
     log_path="/u/apps/handy/shared/log/production.log"
+    ;;
+  heaven|Heaven)
+    user="heaven"
+    host="app-01"
+    log_path="/u/apps/heaven/shared/log/production.log"
     ;;
   *)
     exec pounce-error "invalid app"

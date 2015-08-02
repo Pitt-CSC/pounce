@@ -6,6 +6,7 @@
 # Supports the following apps:
 #
 # * Handy
+# * Heaven
 #
 # Supports the following commands:
 #
@@ -22,6 +23,11 @@ case "$app" in
     user="handy"
     host="app-01"
     app_path="/u/apps/handy/current"
+    ;;
+  heaven|Heaven)
+    user="heaven"
+    host="app-01"
+    app_path="/u/apps/heaven/current"
     ;;
   *)
     exec pounce-error "invalid Rails app"
